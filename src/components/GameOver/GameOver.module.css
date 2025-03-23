@@ -1,0 +1,9 @@
+.modal {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 60px;
+  color: white;
+}
