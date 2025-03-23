@@ -3,12 +3,11 @@ import styles from "./UploadXlsx.module.css";
 import { setSongs } from "../../store/slices";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { songsSelect } from "../../store/selectors";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FileUpload from "../FileUpload/FileUpload";
 import { useState } from "react";
 
 const UploadXlsx = () => {
-  const navigate = useNavigate();
   const songs = useAppSelector(songsSelect)
   const dispatch = useAppDispatch()
 
@@ -27,7 +26,7 @@ const UploadXlsx = () => {
       const sheet = workbook.Sheets[sheetName];
       const parsedData: any[] = XLSX.utils.sheet_to_json(sheet);
 
-      const formattedData = parsedData.map((row, index) => {
+      const formattedData = parsedData.map((row) => {
 
         return {
           title: row.title || "",
